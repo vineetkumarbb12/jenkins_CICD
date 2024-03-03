@@ -44,8 +44,10 @@ pipeline{
             agent {
                 label "slave2"
             }
-            script {
-                echo "Hello world"
+            stage{
+                script {
+                    echo "Hello world"
+                }
             }
         }
     }
