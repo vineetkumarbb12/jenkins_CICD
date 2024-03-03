@@ -41,7 +41,9 @@ pipeline{
             }
         }
         stage("Test1"){
-            agent any
+            agent {
+                label "slave2"
+            }
             script {
                 echo "Hello world"
             }
