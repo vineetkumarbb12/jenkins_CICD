@@ -3,8 +3,8 @@ pipeline{
         label 'slave1'
     }
     environment{
-        $TEST = "This is a test variable"
-        $TEST1 = "This is a test1 variable"
+        TEST = "This is a test variable"
+        TEST1 = "This is a test1 variable"
     }
     
     stages{
