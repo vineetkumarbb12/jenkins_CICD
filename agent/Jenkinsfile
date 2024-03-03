@@ -42,13 +42,8 @@ pipeline{
         }
         stage("Test1"){
             agent any
-            steps{
-                sh '''
-                #!/bin/bash
-                sleep 10
-                echo "========executing TEST1 ========"
-                echo $TEST $TEST1
-                '''
+            script {
+                echo "Hello world"
             }
         }
     }
