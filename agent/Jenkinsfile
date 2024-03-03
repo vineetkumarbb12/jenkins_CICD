@@ -1,7 +1,5 @@
 pipeline{
-    agent{
-        label 'slave1'
-    }
+    agent none
     environment{
         TEST = "This is a test variable"
         TEST1 = "This is a test1 variable"
@@ -9,6 +7,9 @@ pipeline{
     
     stages{
         stage("Build"){
+            agent {
+                label "slave1"
+            }
             steps{
                 sh '''
                 #!/bin/bash
@@ -19,6 +20,7 @@ pipeline{
             }
         }
         stage("Build1"){
+            agent any
             steps{
                 sh '''
                 #!/bin/bash
@@ -29,6 +31,7 @@ pipeline{
             }
         }
         stage("Test"){
+            agent any
             steps{
                 sh """
                 #!/bin/bash
@@ -38,6 +41,7 @@ pipeline{
             }
         }
         stage("Test1"){
+            agent any
             steps{
                 sh '''
                 #!/bin/bash
