@@ -5,7 +5,7 @@ pipeline{
         TEST1 = "This is a test1 variable"
     }
     parameters{
-        string(name: 'PATH_VARIABLE', defaultValue: 'Default Name', description: 'Enter Name')
+        string(name: 'PARAM_STRING', defaultValue: 'Default Name', description: 'Enter Name')
     }
     stages{
         stage("Build"){
@@ -16,7 +16,7 @@ pipeline{
                 sh '''
                 #!/bin/bash
                 sleep 10
-                echo $PATH_VARIABLE
+                echo $PARAM_STRING
                 echo "========executing BUILD ========"
                 '''
             }
@@ -48,7 +48,7 @@ pipeline{
             steps{
                 script {
                     echo "Hello world"
-                    echo "${PATH_VARIABLE}"
+                    echo "${params.PARAM_STRING}"
                 }
             }
         }
