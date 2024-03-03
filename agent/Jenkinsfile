@@ -4,7 +4,9 @@ pipeline{
         TEST = "This is a test variable"
         TEST1 = "This is a test1 variable"
     }
-    
+    parameters{
+        string(name: 'PATH_VARIABLE', defaultValue: 'Default Name', description: 'Enter Name')
+    }
     stages{
         stage("Build"){
             agent {
@@ -14,7 +16,7 @@ pipeline{
                 sh '''
                 #!/bin/bash
                 sleep 10
-                echo $TEST $TEST1
+                echo $PATH_VARIABLE
                 echo "========executing BUILD ========"
                 '''
             }
@@ -24,7 +26,6 @@ pipeline{
             steps{
                 sh '''
                 #!/bin/bash
-                echo $TEST $TEST1
                 sleep 10
                 echo "========executing BUILD1 ========"
                 '''
@@ -35,7 +36,7 @@ pipeline{
             steps{
                 sh """
                 #!/bin/bash
-                sleep 10 && echo $TEST $TEST1
+                sleep 10
                 echo "========executing TEST ========"
                 """
             }
@@ -47,7 +48,7 @@ pipeline{
             steps{
                 script {
                     echo "Hello world"
-                    echo "${env.TEST}"
+                    echo "${PATH_VARIABLE}"
                 }
             }
         }
