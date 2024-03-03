@@ -47,23 +47,5 @@ pipeline{
                 '''
             }
         }
-        stage("Deploy"){
-            steps{
-                sh '''
-                #!/bin/bash
-                sleep 10
-                echo "========executing DEPLOY ========"
-                '''
-            }
-        }
-        stage("Deploy1"){
-            steps{
-                sh """
-                #!/bin/bash
-                sleep 10
-                echo "========executing DEPLOY1 ========"
-                """
-            }
-        }
     }
 }
