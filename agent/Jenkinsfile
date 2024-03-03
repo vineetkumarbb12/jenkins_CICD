@@ -6,7 +6,7 @@ pipeline{
             steps{
                 sh '''
                 #!/bin/bash
-                sleep 5
+                sleep 10
                 echo "========executing BUILD ========"
                 '''
             }
@@ -15,7 +15,7 @@ pipeline{
             steps{
                 sh '''
                 #!/bin/bash
-                sleep 5
+                sleep 10
                 echo "========executing BUILD1 ========"
                 '''
             }
@@ -24,7 +24,7 @@ pipeline{
             steps{
                 sh """
                 #!/bin/bash
-                sleep 5
+                sleep 10
                 echo "========executing TEST ========"
                 """
             }
@@ -33,7 +33,7 @@ pipeline{
             steps{
                 sh '''
                 #!/bin/bash
-                sleep 5
+                sleep 10
                 echo "========executing TEST1 ========"
                 '''
             }
@@ -42,7 +42,7 @@ pipeline{
             steps{
                 sh '''
                 #!/bin/bash
-                sleep 5
+                sleep 10
                 echo "========executing DEPLOY ========"
                 '''
             }
@@ -51,7 +51,7 @@ pipeline{
             steps{
                 sh """
                 #!/bin/bash
-                sleep 5
+                sleep 10
                 echo "========executing DEPLOY1 ========"
                 """
             }
