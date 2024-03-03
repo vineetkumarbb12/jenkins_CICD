@@ -11,6 +11,15 @@ pipeline{
                 '''
             }
         }
+        stage("Build1"){
+            steps{
+                sh '''
+                #!/bin/bash
+                sleep 5
+                echo "========executing BUILD1 ========"
+                '''
+            }
+        }
         stage("Test"){
             steps{
                 sh """
@@ -20,12 +29,30 @@ pipeline{
                 """
             }
         }
+        stage("Test1"){
+            steps{
+                sh '''
+                #!/bin/bash
+                sleep 5
+                echo "========executing TEST1 ========"
+                '''
+            }
+        }
         stage("Deploy"){
+            steps{
+                sh '''
+                #!/bin/bash
+                sleep 5
+                echo "========executing DEPLOY ========"
+                '''
+            }
+        }
+        stage("Deploy1"){
             steps{
                 sh """
                 #!/bin/bash
                 sleep 5
-                echo "========executing Deploy ========"
+                echo "========executing DEPLOY1 ========"
                 """
             }
         }
